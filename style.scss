@@ -1,0 +1,619 @@
+//Colors
+
+//Primary
+
+$LimeGreen: hsl(163, 72%, 41%);
+$BrightRed: hsl(356, 69%, 56%);
+
+$Facebook: hsl(208, 92%, 53%);
+$Twitter: hsl(203, 89%, 53%);
+$Instagram: linear gradient hsl(37, 97%, 70%) to hsl(329, 70%, 58%);
+$YouTube: hsl(348, 97%, 39%);
+
+//Dark Theme
+
+$Toggle: linear gradient hsl(210, 78%, 56%) to hsl(146, 68%, 55%);
+
+//Light Theme
+
+$Toggle: hsl(230, 22%, 74%);
+
+//Neutral
+//Dark Theme
+
+$VeryDarkBlue: hsl(230, 17%, 14%);
+$VeryDarkBlue: hsl(232, 19%, 15%);
+$DarkDesaturatedBlue: hsl(228, 28%, 20%);
+$DesaturatedBlue: hsl(228, 34%, 66%);
+$White: hsl(0, 0%, 100%);
+
+//Light Theme
+
+$White: hsl(0, 0%, 100%);
+$VeryPaleBlue: hsl(225, 100%, 98%);
+$LightGrayishBlue: hsl(227, 47%, 96%);
+$DarkGrayishBlue: hsl(228, 12%, 44%);
+$VeryDarkBlue: hsl(230, 17%, 14%);
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button,
+input::-webkit-search-results-button,
+input::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+html {
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Inter", sans-serif;
+  font-size: 14px;
+  //position: relative;
+}
+
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+@mixin flexCen($align, $just, $wrap, $direct) {
+  display: flex;
+  align-items: $align;
+  justify-content: $just;
+  flex-wrap: $wrap;
+  flex-direction: $direct;
+}
+
+.container {
+  // position: absolute;
+  // top:50%;
+  // left:50%;
+  // transform: translate(-50%,-50%);
+  @include size(100%, 100vh);
+  // background-color: black;
+  display: flex;
+  flex-direction: column;
+  .header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 0.5rem 0 0 0;
+    padding: 1rem 0 1rem 5rem;
+    // background-color: rebeccapurple;
+    &__social {
+      display: flex;
+      flex-direction: column;
+      &-title {
+        font-size: 1.4rem;
+        font-weight: 550;
+      }
+      &-follow {
+        margin-top: 0.4rem;
+        color: $VeryDarkBlue;
+        font-size: 0.9rem;
+      }
+    }
+    &__mode {
+      margin: 0.8rem 9rem 0 0;
+      &-dark {
+        color: rgb(119,125,155);
+      }
+      #button {
+        @include size(2.8rem, 1.3rem);
+        margin-left: 1rem;
+        transform: translateY(-0.3rem);
+        border-radius: 3rem;
+        border: none;
+        outline: none;
+        
+        position: relative;
+        background-color: rgb(174,178,203);
+        cursor: pointer;
+        transition: all 0.25s linear;
+        &:hover
+        {
+          background-image: linear-gradient(to top right,rgb(56,156,214),rgb(60,181,182));
+        }
+        &::before {
+          content: "";
+          @include size(1rem, 1rem);
+          border-radius: 50%;
+          background-color: white;
+          top:50%;
+          left:100%;
+          transform: translate(-120%,-50%);
+          position: absolute;
+        }
+      }
+    }
+  }
+  .list {
+    display: flex;
+    // justify-content: space-around;
+    margin: 0.5rem 0 1.5rem 5rem;
+    &__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      @include size(13.1rem, 11rem);
+      margin-right: 4rem;
+      background-color: rgb(240, 243, 250);
+      text-align: center;
+      cursor: pointer;
+      border-radius: 0.5rem;
+      transition: all 0.15s linear;
+      &:hover
+      {
+        background-color: rgb(225,227,240);
+      }
+      &:first-child {
+        border-top: 2px solid $Facebook;
+        
+      }
+      &:nth-child(2) {
+        border-top: 2px solid $Twitter;
+        margin-left: 0.98rem;
+      }
+      &:nth-child(3) {
+        border-top: 2px solid $YouTube;
+        margin-left: 0.92rem;
+      }
+      &:last-child {
+        border-top: 2px solid $YouTube;
+      }
+
+      div {
+        display: flex;
+        margin: 1rem 0 1rem 0;
+        .image {
+          @include size(1.3rem, 1.3rem);
+        }
+        span {
+          margin-top: 0.3rem;
+          margin-left: 0.4rem;
+          font-size: 0.9rem;
+          color: $DarkGrayishBlue;
+        }
+      }
+      &-number {
+        font-size: 3rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem;
+      }
+      .follower {
+        color: rgb(180, 183, 191);
+        margin-bottom: 0rem;
+      }
+      .downUp {
+        img {
+          @include size(0.6rem, 0.6rem);
+          margin-top: 0.4rem;
+        }
+        span {
+          font-size: 0.9rem;
+          // &:nth-child(2)
+          // {
+          //   color: $LimeGreen;
+          // }
+        }
+      }
+    }
+  }
+  .Overview
+  {
+    margin-bottom: -3rem;
+    &__today
+    {
+       margin-left: 5rem;
+       font-size: 1.4rem;
+       font-weight: 500;
+       color: $DarkDesaturatedBlue;
+    }
+    &__grid
+    {
+      display: grid;
+      // grid-template-columns: repeat(4,1fr);
+      // grid-template-rows: repeat(2,1fr);
+      // grid-column-gap: -2rem;
+      // grid-row-gap: 1rem;
+      grid-template-areas: " h1 h2 h3 h4 "
+                           " h5 h6 h7 h8 ";
+      margin-left: 5rem;
+      margin-top: 1rem;
+      grid-gap: 1rem 0rem;
+      &-item
+      {
+        //@include size(65%,100%);
+        width:13rem;
+        height: 6rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        background-color: rgb(240,243,250);
+        transition: all 0.15s linear;
+      &:hover
+      {
+        background-color: rgb(225,227,240);
+      }
+        &:first-child
+        {
+          grid-area: h1;
+        }
+        &:nth-child(2)
+        {
+          grid-area: h2;
+          margin-left: -3.3rem;
+        }
+        &:nth-child(3)
+        {
+          grid-area: h3;
+          margin-left: -3.8rem;
+        }
+        &:nth-child(4)
+        {
+          grid-area: h4;
+          margin-left: -4rem;
+        }
+        &:nth-child(5)
+        {
+          grid-area: h5;
+        }
+        &:nth-child(6)
+        {
+          grid-area: h6;
+          margin-left: -3.3rem;
+        }
+        &:nth-child(7)
+        {
+          grid-area: h7;
+          margin-left: -3.8rem;
+        }
+        &:last-child
+        {
+          grid-area: h8;
+          margin-left: -4rem;
+        }
+        display: flex;
+        flex-direction: column;
+        .left
+        {
+           display: flex;
+           flex-direction: row;
+          //  align-items: center;
+           justify-content: space-around;
+           margin-bottom: 1.5rem;
+           .name
+           {
+             margin: 1rem 2rem 0 0rem;
+             color: rgb(137,140,155);
+             font-size: 1rem;
+           }
+           .image
+           {
+             @include size(1.3rem,1.3rem);
+             object-fit: cover; 
+             margin-top: 0.8rem;
+           }
+        }
+        .right
+        {
+           display: flex;
+           flex-direction: row;
+           justify-content: space-around;
+           //background-color: rebeccapurple;
+           //margin-left: auto;
+           
+           .number
+           {
+             font-size: 1.3rem;
+             font-weight: 550;
+             margin-left: 0.5rem;
+           }
+           .downUp
+           {
+              margin: 0.2rem 0 1rem 4rem;
+             img
+             {
+                margin-bottom: 0.2rem;
+             }
+            //  span
+            //  {
+                
+            //  }
+           }
+        }
+      }
+    }
+  }
+ 
+}
+.attribution
+{
+  margin-top: -1.5rem;
+}
+
+@media screen and (max-width:767px)
+{
+  .container {
+    @include size(100%, 100vh);
+    display: flex;
+    flex-direction: column;
+    .header {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      margin: 0.5rem 0 0 0;
+      padding: 1rem 0 1rem 3rem;
+      //text-align: center;
+      // background-color: rebeccapurple;
+      &__social {
+        display: flex;
+        flex-direction: column;
+        &-title {
+          font-size: 1.1rem;
+          font-weight: 550;
+        }
+        &-follow {
+          margin-top: 0.4rem;
+          color: $VeryDarkBlue;
+          font-size: 0.9rem;
+        }
+      }
+      &__mode {
+        // margin: 2rem 9rem 0 0;
+        margin: 2rem 0 2rem 0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &-dark {
+          color: rgb(119,125,155);
+        }
+        #button {
+          @include size(2.8rem, 1.3rem);
+          transform: translateY(-0.3rem);
+
+          border-radius: 3rem;
+          border: none;
+          outline: none;
+          
+          position: relative;
+          background-color: rgb(174,178,203);
+          cursor: pointer;
+          transition: all 0.25s linear;
+          &:hover
+          {
+            background-image: linear-gradient(to top right,rgb(56,156,214),rgb(60,181,182));
+          }
+          &::before {
+            content: "";
+            @include size(1rem, 1rem);
+            border-radius: 50%;
+            background-color: white;
+            top:50%;
+            left:100%;
+            transform: translate(-120%,-50%);
+            position: absolute;
+          }
+        }
+      }
+    }
+    .list {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      //justify-content: space-between;
+      // justify-content: space-around;
+      margin: 0.5rem 0 1.5rem 4rem;
+      &__item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        @include size(90%, 11rem);
+        margin:1rem 4rem 1rem 0;
+        background-color: rgb(240, 243, 250);
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.5rem;
+        transition: all 0.15s linear;
+        &:hover
+        {
+          background-color: rgb(225,227,240);
+        }
+        &:first-child {
+          border-top: 2px solid $Facebook;
+          
+        }
+        &:nth-child(2) {
+          border-top: 2px solid $Twitter;
+          margin-left: 0rem;
+        }
+        &:nth-child(3) {
+          border-top: 2px solid $YouTube;
+          margin-left: 0rem;
+        }
+        &:last-child {
+          border-top: 2px solid $YouTube;
+        }
+  
+        div {
+          display: flex;
+          margin: 1rem 0 1rem 0;
+          .image {
+            @include size(1.3rem, 1.3rem);
+          }
+          span {
+            margin-top: 0.3rem;
+            margin-left: 0.4rem;
+            font-size: 0.9rem;
+            color: $DarkGrayishBlue;
+          }
+        }
+        &-number {
+          font-size: 3rem;
+          font-weight: 500;
+          margin-bottom: 0.5rem;
+        }
+        .follower {
+          color: rgb(180, 183, 191);
+          margin-bottom: 0rem;
+        }
+        .downUp {
+          img {
+            @include size(0.6rem, 0.6rem);
+            margin-top: 0.4rem;
+          }
+          span {
+            font-size: 0.9rem;
+            // &:nth-child(2)
+            // {
+            //   color: $LimeGreen;
+            // }
+          }
+        }
+      }
+    }
+    .Overview
+    {
+      margin-bottom: -3rem;
+      &__today
+      {
+         margin-left: 3rem;
+         font-size: 1.4rem;
+         font-weight: 500;
+         color: $DarkDesaturatedBlue;
+      }
+      &__grid
+      {
+        display: grid;
+        // grid-template-columns: repeat(4,1fr);
+        // grid-template-rows: repeat(2,1fr);
+        // grid-column-gap: -2rem;
+        // grid-row-gap: 1rem;
+        grid-template-areas: "h1"
+        "h2"
+        "h3"
+        "h4"
+        "h5"
+        "h6"
+        "h7"
+        "h8";
+        // grid-template-areas: " h1 h2 h3 h4 "
+        //                      " h5 h6 h7 h8 ";
+        margin-left: 3rem;
+        margin-top: 1rem;
+        grid-gap: 1rem 0rem;
+        &-item
+        {
+          //@include size(65%,100%);
+          width:84%;
+          height: 6rem;
+          border-radius: 0.5rem;
+          cursor: pointer;
+          background-color: rgb(240,243,250);
+          transition: all 0.15s linear;
+        &:hover
+        {
+          background-color: rgb(225,227,240);
+        }
+          &:first-child
+          {
+            grid-area: h1;
+          }
+          &:nth-child(2)
+          {
+            grid-area: h2;
+            margin-left: 0rem;
+          }
+          &:nth-child(3)
+          {
+            grid-area: h3;
+            margin-left: 0rem;
+          }
+          &:nth-child(4)
+          {
+            grid-area: h4;
+            margin-left: 0rem;
+
+          }
+          &:nth-child(5)
+          {
+            grid-area: h5;
+            margin-left: 0rem;
+          }
+          &:nth-child(6)
+          {
+            grid-area: h6;
+            margin-left: 0rem;
+
+          }
+          &:nth-child(7)
+          {
+            grid-area: h7;
+            margin-left: 0rem;
+
+          }
+          &:last-child
+          {
+            grid-area: h8;
+            margin-left: 0rem;
+          }
+          display: flex;
+          flex-direction: column;
+          .left
+          {
+             display: flex;
+             flex-direction: row;
+            //  align-items: center;
+             justify-content: space-around;
+             margin-bottom: 1.5rem;
+             .name
+             {
+               margin: 1rem 2rem 0 0rem;
+               color: rgb(137,140,155);
+               font-size: 1rem;
+             }
+             .image
+             {
+               @include size(1.3rem,1.3rem);
+               object-fit: cover; 
+               margin-top: 0.8rem;
+             }
+          }
+          .right
+          {
+             display: flex;
+             flex-direction: row;
+             justify-content: space-around;
+             //background-color: rebeccapurple;
+             //margin-left: auto;
+             
+             .number
+             {
+               font-size: 1.3rem;
+               font-weight: 550;
+               margin-left: 0.5rem;
+             }
+             .downUp
+             {
+                margin: 0.2rem 0 1rem 4rem;
+               img
+               {
+                  margin-bottom: 0.2rem;
+               }
+              //  span
+              //  {
+                  
+              //  }
+             }
+          }
+        }
+      }
+    }
+
+  }
+  .attribution
+  { 
+    margin-top: 92rem;
+  }
+}

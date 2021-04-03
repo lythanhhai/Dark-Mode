@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./reset.css" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.6.3/css/all.css"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Ly Thanh Hai</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+    </style>
+  </head>
+  <body id="body" class="body">
+    <div class="container">
+      <div class="header">
+        <div class="header__social">
+          <h1 class="header__social-title">Social Media Dashboard</h1>
+          <p class="header__social-follow">Total Follower: 23,004</p>
+        </div>
+        <div class="header__mode">
+          <span class="header__mode-dark"> Dark Mode </span>
+          <button type="button" id="button"></button>
+        </div>
+      </div>
+      <ul class="list">
+        <div class="list__item" >
+          <div class="">
+            <img src="./images/icon-facebook.svg" alt="" class="image" />
+            <span class="list__item-name"> @nathanf </span>
+          </div>
+          <h2 class="list__item-number">1987</h2>
+          <p class="follower">Followers</p>
+          <div class="downUp">
+            <img src="./images/icon-up.svg" alt="" />
+            <span style="color:hsl(163, 72%, 41%)"> 12 Today </span>
+          </div>
+        </div>
+        <div class="list__item">
+          <div class="">
+            <img src="./images/icon-twitter.svg" alt="" class="image" />
+            <span class="list__item-name"> @nathanf </span>
+          </div>
+          <h2 class="list__item-number">1044</h2>
+          <p class="follower">Followers</p>
+          <div class="downUp">
+            <img src="./images/icon-up.svg" alt="" />
+            <span style="color:hsl(163, 72%, 41%)"> 99 Today </span>
+          </div>
+        </div>
+        <div class="list__item">
+          <div>
+            <img src="./images/icon-instagram.svg" alt="" class="image" />
+            <span class="list__item-name"> @realnathanf </span>
+          </div>
+          <h2 class="list__item-number">11k</h2>
+          <p class="follower">Followers</p>
+          <div class="downUp">
+            <img src="./images/icon-up.svg" alt="" />
+            <span style="color:hsl(163, 72%, 41%)"> 1099 Today </span>
+          </div>
+        </div>
+        <div class="list__item">
+          <div>
+            <img src="./images/icon-youtube.svg" alt="" class="image" />
+            <span class="list__item-name"> Nathan F </span>
+          </div>
+          <h2 class="list__item-number">8239</h2>
+          <p class="follower">Subcriber</p>
+          <div class="downUp">
+            <img src="./images/icon-down.svg" alt="" />
+            <span style="color:hsl(356, 69%, 56%)"> 144 Today </span>
+          </div>
+        </div>
+      </ul>
+      <div class="Overview">
+        <h2 class="Overview__today">Overview - Today</h2>
+        <div class="Overview__grid">
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Page Views</p>
+              <img src="./images/icon-facebook.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">87</h3>
+              <div class="downUp">
+                <img src="./images/icon-up.svg" alt="" />
+                <span style="color:hsl(163, 72%, 41%)"> 3% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Likes</p>
+              <img src="./images/icon-facebook.svg" alt="" class="image" />
+            </div>
+            <div class="right">
+              <h3 class="number">52</h3>
+              <div class="downUp">
+                <img src="./images/icon-down.svg" alt="" />
+                <span style="color:hsl(356, 69%, 56%)"> 2% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Likes</p>
+              <img src="./images/icon-instagram.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">5462</h3>
+              <div class="downUp">
+                <img src="./images/icon-up.svg" alt="" />
+                <span style="color:hsl(163, 72%, 41%)"> 2257% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Profile Views</p>
+              <img src="./images/icon-instagram.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">52k</h3>
+              <div class="downUp">
+                <img src="./images/icon-up.svg" alt="" />
+                <span style="color:hsl(163, 72%, 41%)"> 1375% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Retweets</p>
+              <img src="./images/icon-twitter.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">117</h3>
+              <div class="downUp">
+                <img src="./images/icon-up.svg" alt="" />
+                <span style="color:hsl(163, 72%, 41%)"> 303% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Likes</p>
+              <img src="./images/icon-twitter.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">507</h3>
+              <div class="downUp">
+                <img src="./images/icon-up.svg" alt="" />
+                <span style="color:hsl(163, 72%, 41%)"> 553% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Likes</p>
+              <img src="./images/icon-youtube.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">107</h3>
+              <div class="downUp">
+                <img src="./images/icon-down.svg" alt="" />
+                <span style="color:hsl(356, 69%, 56%)"> 19% </span>
+              </div>
+            </div>
+          </div>
+          <div class="Overview__grid-item">
+            <div class="left">
+              <p class="name">Total Views</p>
+              <img src="./images/icon-youtube.svg" alt="" class="image" />
+              
+            </div>
+            <div class="right">
+              <h3 class="number">1407</h3>
+              <div class="downUp">
+                <img src="./images/icon-down.svg" alt="" />
+                <span style="color:hsl(356, 69%, 56%)"> 12% </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="#">Ly Thanh Hai</a>.
+    </div>
+  </body>
+</html>
